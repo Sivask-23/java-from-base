@@ -1,0 +1,66 @@
+Major operations in bit manipulations are:
+1. Get
+2. Set
+3. Clear
+4. Update
+
+ left shifts and right shifts = Number operator position
+ eg: int a = 5;
+     int pos = 1
+     a << pos; // this perform left shift
+     a >> pos; // this perform right shift
+
+ 1. Get
+    get third bit(pos 2) of a number n. [n=0101] //  here third bit is '1'
+    ans: for this we need to perform
+     1. Bit mask: 1<<i // here i = pos       1<<2 = 0001<<2
+                                                0100 // result after bit mask
+
+     2. operation: AND                       0100 AND 0101
+                                                0100 // is the final ans and we get non-zero ans
+                                                if its  0000  then it will be zero
+                                                since ans is 0100 we get third bit as 1
+
+ 2. Set
+
+    Set second bit(pos 1) of a number n. [n=0101] //  here second bit is '0' and after set, the ans should be 0111[7]
+    ans: for this we need to perform
+     1. Bit mask: 1<<i // here i = pos       1<<1 = 0001<<1
+                                                0010 // result after bit mask
+
+     2. operation: OR                        0010 OR 0101
+                                                0111 // is the final ans and we get non-zero ans
+                                                if its  0000  then it will be zero
+                                                since ans is 0111[7] we set second bit as 1
+
+3. Clear
+
+    Clear third bit(pos 2) of a number n. [n=0101] //  here third bit is '1'
+    ans: for this we need to perform
+     1. Bit mask: 1<<i // here i = pos       1<<2 = 0001<<2
+                                                0100 // result after bit mask
+
+     2. operation: AND  with NOT of bitMask             to get not of bitmask  do ~(bitmask) => ~(0100) gives
+                                                                                             =>   1011
+                                                        1011 AND 0101
+                                                        0001 // after clearing third bit ie. '1'
+                                                        we get 0001
+
+4. Update
+
+    Update second bit(pos 1) of a number n to 1. [n=0101] //  here second bit is '0'
+    ans: for this we need to perform
+
+    to update we have two options that is to update 1 to 0 and 0 to 1:
+
+    1. for 1:[to update 1 to 0]
+        we need to perform clear operation
+        ie, 1. bitmask : 1<<pos
+            2. operation: AND with not of Bitmask
+
+    2. for 0:[to update 0 to 1]
+        we need to perform set operation
+        ie, 1. bitmask: 1<<pos
+            2. operation: OR
+
+
