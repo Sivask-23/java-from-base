@@ -22,7 +22,7 @@ public class equilibriumIndexofArray {
 
     }
     public static void main(String[] args) {
-        int[] ar={-7, 1, 5, 2, -4, 3, 0};
+        int[] ar={6, -1, 5, -2, 4, 3, 0};
         int n=ar.length-1;
         if (findEquilibriumIndex(ar,n)==-1){
             System.out.println("-1");
