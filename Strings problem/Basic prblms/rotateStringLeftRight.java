@@ -19,7 +19,7 @@ public class rotateStringLeftRight {
 
         for (int i = 0; i < rot; i++) {
             char t=str[0];
-            for (int j = 0; j < str.length-1; j++) {
+            for (int j = 0; j < str.length-1; j++) { //n*n*n n^3
                 str[j]=str[j+1];
             }
             str[str.length-1]=t;
@@ -31,11 +31,11 @@ public class rotateStringLeftRight {
 
     public static void rightRot(char [] str, int rot){
 
-        int r= rot% str.length;
+        int r= rot% str.length; // it ensure this rot will not go out of bound
 
-        revUsingTwoPointer(str,0, str.length-1);
-        revUsingTwoPointer(str,r, str.length-1);
-        System.out.println(revUsingTwoPointer(str,0, r-1));
+        revUsingTwoPointer(str,0, str.length-1);  //  ABCDEF -> FBAEDC
+        revUsingTwoPointer(str,r, str.length-1);  // FEDCBA ->   FEABCD
+        System.out.println(revUsingTwoPointer(str,0, r-1));  // FEABCD -> EFABCD
 
     }
 
