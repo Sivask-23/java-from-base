@@ -65,15 +65,15 @@ public class noOfFlipsNeeded {
             ptrn0 = (i % 2 == 0) ? '0' : '1';
             ptrn1 = (i % 2 == 0) ? '1' : '0';
 
-            if (str.charAt(i)!=ptrn0){
+            if (str.charAt(i) != ptrn0) {
                 c0++;
             }
-            if (str.charAt(i)!=ptrn1){
+            if (str.charAt(i) != ptrn1) {
                 c1++;
             }
         }
 
-        System.out.println("Min flips needed using efficient method2 is "+Math.min(c0,c1));
+        System.out.println("Min flips needed using efficient method2 is " + Math.min(c0, c1));
 
 
     }
